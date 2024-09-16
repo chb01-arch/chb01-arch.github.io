@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <style>
+        :root {
+            --background-color: #fff;
+            --text-color: #333;
+            --link-color: #333;
+            --border-color: #ddd;
+            --button-color: #333;
+            --button-hover-color: #555;
+            --header-text-color: #2e2e2e;
+            --dark-mode-background-color: #1f1f1f;
+        }
+
+        body.dark-mode {
+            --background-color: var(--dark-mode-background-color);
+            --text-color: #f4f4f4;
+            --link-color: #f4f4f4;
+            --border-color: #333;
+            --button-color: #f4f4f4;
+            --button-hover-color: #ddd;
+            --header-text-color: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin-top: 40px;
+            margin-left: 40px;
+            margin-right: 40px;
+            background-color: var(--background-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: normal;
+            color: var(--header-text-color);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--button-color);
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--button-hover-color);
+        }
+
+        nav a.active {
+            color: var(--button-hover-color);
+        }
+
+        nav a.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 1px;
+            background-color: #333;
+        }
+
+        .toggle-theme {
+            margin-left: 20px;
+        }
+
+        .toggle-theme button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: var(--link-color);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .toggle-theme button:hover {
+            color: #555;
+        }
+
+        .cover-image-container {
+            position: relative;
+            width: calc(100% - 80px);
+            height: 500px; /* Altezza aumentata */
+            margin: 20px auto;
+        }
+
+        .cover-image {
+            width: 100%;
+            height: 100%;
+            background-image: url('copertina.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 1; /* Opacità al 100% */
+        }
+
+        .intro {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 20px;
+            color: #fff; /* Testo bianco */
+            background: none; /* Rimosso lo sfondo bianco */
+            border-radius: 0; /* Rimosso il bordo arrotondato */
+        }
+
+        .intro h2 {
+            font-size: 33px;
+            margin-bottom: 10px;
+            color: #fff; /* Testo bianco */
+            font-weight: 500; /* Font-weight ridotto per meno grassetto */
+        }
+
+        .intro p {
+            font-size: 18px;
+            color: #fff; /* Testo bianco */
+        }
+
+        .scroll-button {
+            position: absolute;
+            bottom: 20px; /* Spostato più in basso */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 400px; /* Dimensione massima */
+            padding: 15px; /* Padding aumentato */
+            background-color: rgba(0, 0, 0, 0.3); /* Sfondo nero opaco al 30% */
+            color: #fff; /* Testo bianco */
+            border: 2px solid #fff; /* Contorno bianco */
+            border-radius: 30px; /* Angoli arrotondati di più */
+            cursor: pointer;
+            font-size: 14px; /* Font ridotto */
+            font-weight: 700; /* Grassetto */
+            text-align: center;
+            text-transform: uppercase; /* Testo in maiuscolo */
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+            z-index: 10; /* Sovrapposto alla foto di copertura */
+        }
+
+        .scroll-button:hover {
+            background-color: #fff; /* Sfondo bianco al passaggio del mouse */
+            color: #000; /* Testo nero al passaggio del mouse */
+            border-color: #fff; /* Contorno bianco al passaggio del mouse */
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 0 10%;
+            margin-top: 100px; /* Margine superiore ridotto */
+        }
+
+        .project {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .project img {
+            width: 100%;
+            display: block;
+        }
+
+        .project h2.white-text {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 38px;
+            z-index: 2;
+            transition: opacity 0.3s;
+        }
+
+        .project .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 33%;
+            background-color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project .overlay h2 {
+            color: #333;
+            font-size: 38px;
+            z-index: 3;
+        }
+
+        .project:hover .overlay {
+            opacity: 1;
+        }
+
+        .project:hover h2.white-text {
+            opacity: 0;
+        }
+
+        .footer-container {
+            width: calc(100% - 80px);
+            margin: 20px auto;
+            padding-left: 0;
+        }
+
+        footer {
+            text-align: left;
+            padding: 20px;
+            background-color: var(--background-color);
+            margin-left: 10px;
+            border-top: none;
+        }
+
+        footer p {
+            color: var(--text-color);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+                padding: 0 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Chiara Brambilla</h1>
+        <nav>
+            <a href="index.html" class="active">Portfolio</a>
+            <a href="resume.html">Résumé</a>
+            <div class="toggle-theme">
+                <button id="themeButton"><i class="fas fa-sun"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="cover-image-container">
+        <div class="cover-image"></div>
+        <div class="intro">
+            <h2>Welcome to my Portfolio</h2>
+            <p>My name is Chiara Brambilla, an architectural designer passionate about preserving cultural heritage while embracing innovation. With a degree in Architecture Design and a Master's in Museography and Strategic Design, my work reflects a blend of respect for history and a forward-thinking approach.</p>
+        </div>
+        <button class="scroll-button" onclick="scrollToProjects()">Scroll down to see my projects</button>
+    </div>
+
+    <div class="project-grid">
+        <div class="project" onclick="location.href='architettura.html';">
+            <img src="architecture.jpg" alt="Architecture">
+            <h2 class="white-text">Architecture</h2>
+            <div class="overlay">
+                <h2>Architecture</h2>
+            </div>
+        </div>
+
+        <div class="project" onclick="location.href='yacht-design.html';">
+            <img src="yacht-design.jpg" alt="Yacht Design">
+            <h2 class="white-text">Yacht Design</h2>
+            <div class="overlay">
+                <h2>Yacht Design</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <footer>
+            <p>&copy; 2024 Chiara Brambilla. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function scrollToProjects() {
+            document.querySelector('.project-grid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const themeButton = document.getElementById('themeButton');
+        let darkMode = false;
+
+        themeButton.addEventListener('click', () => {
+            darkMode = !darkMode;
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        });
+    </script>
+
+</body>
+</html>
