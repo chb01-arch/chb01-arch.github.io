@@ -6,6 +6,8 @@
     <title>Architecture Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         :root {
             --background-color: #fff;
@@ -234,23 +236,27 @@
         }
 
         .footer-container {
-            width: calc(100% - 80px);
-            margin: 20px auto;
+            width: 100%;
+            margin: 40px 0px 0px;
             padding-left: 0;
         }
 
         footer {
-            text-align: left;
+            background-color: var(--border-color);
+            color: var(--text-color);
             padding: 20px;
-            background-color: var(--background-color);
-            margin-left: 10px;
-            border-top: none;
+            text-align: center;
+            margin-top: 0; /* Margine rimosso */
         }
 
-        footer p {
-            color: var(--text-color);
-            font-size: 14px;
-            margin: 0;
+        footer a {
+            color: var(--link-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -259,14 +265,156 @@
                 padding: 0 5%;
             }
         }
+
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 200px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dropdown-content a {
+    color: var(--button-color);
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-content .section-title {
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+    opacity: 1;
+}
+
+.dropdown-content.hide {
+    transition: opacity 0.8s ease; /* La transizione di 0,8 secondi */
+}
+
+/* Stile per dropdown in modalità scura */
+body.dark-mode .dropdown-content {
+    background-color: var(--dark-mode-background-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .dropdown-content a {
+    color: var(--text-color);
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: var(--link-color);
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--button-hover-color);
+}
+
+.section-title {
+    font-weight: bold;
+    padding: 10px;
+    background-color: var(--background-color); /* Imposta il colore di sfondo */
+    transition: background-color 0.3s ease; /* Aggiunge una transizione */
+}
+
+/* Modalità scura */
+body.dark-mode .section-title {
+    background-color: var(--dark-mode-background-color); /* Colore di sfondo in modalità scura */
+}
+
+/* Stili generali per desktop */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.project-button {
+  display: inline-block;
+  width: 48%;
+  margin: 1%;
+  text-align: center;
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  .project-button {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+}
+
+
     </style>
+
+
+
 </head>
 <body>
 
     <header>
         <h1>Chiara Brambilla</h1>
         <nav>
-            <a href="index.html" class="active">Portfolio</a>
+            <div class="dropdown">
+    <a href="portfolio.html" class="active">Portfolio</a>
+    <div class="dropdown-content">
+        <div class="section-title">Architecture</div>
+        <a href="rifugio_graffer.html">Rifugio Graffer al Grostè</a>
+        <a href="bottega_simonetti.html">Bottega Simonetti</a>
+        <a href="acropoli_atene.html">Acropoli di Atene</a>
+        <a href="magna_grecia.html">Magna Grecia</a>
+        <a href="piranesi.html">Piranesi Prix de Rome</a>
+        <a href="magnolia9.html">Magnolia 9</a>
+        <div class="section-title">Yacht Design</div>
+        <a href="jiwa.html">SD112 Jiwa</a>
+        <a href="ferry.html">BlockWonder Ferry</a>
+    </div>
+</div>
+
             <a href="resume.html">Résumé</a>
             <div class="toggle-theme">
                 <button id="themeButton"><i class="fas fa-sun"></i></button>
@@ -304,6 +452,17 @@
     <div class="footer-container">
         <footer>
             <p>&copy; 2024 Chiara Brambilla. All rights reserved.</p>
+            <p>
+                <a href="index.html">Portfolio</a>
+                <a href="resume.html">Résumé</a>
+                <a href="contact.html">Contact</a>
+            </p>
+<div class="social-icons">
+    <a href="https://pin.it/1cr3hXCGB" target="_blank"><i class="fab fa-pinterest"></i></a>
+    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/_.chb/" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+
         </footer>
     </div>
 
@@ -323,6 +482,25 @@
                 document.body.classList.remove('dark-mode');
             }
         });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownContent = dropdown.querySelector('.dropdown-content');
+        let hideTimeout;
+
+        dropdown.addEventListener('mouseenter', function () {
+            clearTimeout(hideTimeout);
+            dropdown.classList.add('show');
+        });
+
+        dropdown.addEventListener('mouseleave', function () {
+            hideTimeout = setTimeout(function () {
+                dropdown.classList.remove('show');
+            }, 800); // Mantieni il menù visibile per 0,8 secondi
+        });
+    });
+
+
     </script>
 
 </body>

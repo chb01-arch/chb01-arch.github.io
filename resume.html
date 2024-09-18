@@ -148,6 +148,7 @@
             flex-direction: column;
             align-items: center;
             color: var(--light-mode-text-color);
+            margin-right: 20px; /* Aggiunge margine a destra */
         }
 
         body.dark-mode .left {
@@ -265,44 +266,44 @@
         }
 		
 		.skills-columns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Spazio tra le colonne */
-}
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Spazio tra le colonne */
+        }
 
-.skills-column {
-    flex: 1;
-    min-width: 200px; /* Larghezza minima per le colonne */
-}
+        .skills-column {
+            flex: 1;
+            min-width: 200px; /* Larghezza minima per le colonne */
+        }
 
-.skill {
-    margin-bottom: 15px;
-}
+        .skill {
+            margin-bottom: 15px;
+        }
 
-.skill p {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-}
+        .skill p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
 
-.skill-level {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 2px;
-}
+        .skill-level {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 2px;
+        }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ddd;
-    display: inline-block;
-}
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: inline-block;
+        }
 
-.dot.filled {
-    background-color: #333; /* Colore per le palline piene */
-}
+        .dot.filled {
+            background-color: #333; /* Colore per le palline piene */
+        }
 
     </style>
 </head>
@@ -326,106 +327,81 @@
             <h2>Profile</h2>
             <p>Graduate in Architectural Design with a strong passion for design, photography, and travel. Known for my innovative approach and tireless work ethic, I excel in organizing and prioritizing tasks to meet deadlines effectively. Adept at collaborating within teams, I thrive in coordinating efforts to maximize contributions and achieve collective goals. Committed to continuous improvement, I demonstrate a deep dedication to learning and striving for excellence in all my endeavors.</p>
 
-            <h2 class="section-title">Contact</h2>
+            <h2 class="section-title">Contact Information</h2>
             <div class="contact-info">
                 <div class="contact-icons">
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i></li>
-                        <li><i class="fas fa-phone-alt"></i></li>
-                        <li><i class="fas fa-envelope"></i></li>
-                        <li><i class="fab fa-linkedin"></i></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:example@example.com">example@example.com</a></li>
+                        <li><i class="fas fa-phone"></i><a href="tel:+1234567890">+1234567890</a></li>
+                        <li><i class="fas fa-linkedin"></i><a href="https://www.linkedin.com/in/example">LinkedIn</a></li>
+                        <li><i class="fas fa-globe"></i><a href="https://www.example.com">Website</a></li>
                     </ul>
                 </div>
                 <div class="contact-text">
-                    <ul>
-                        <li>Milano</li>
-                        <li>+39 3403660778</li>
-                        <li>chiarabrambilla@outlook.com</li>
-                        <li><a href="https://linkedin.com/in/chiara-brambilla2001">linkedin.com/in/chiara-brambilla2001</a></li>
-                    </ul>
+                    <p><strong>Location:</strong> City, Country</p>
+                    <p><strong>Phone:</strong> +1234567890</p>
+                    <p><strong>Email:</strong> <a href="mailto:example@example.com">example@example.com</a></p>
                 </div>
             </div>
 
             <h2 class="section-title">Languages</h2>
+            <p>English - Fluent</p>
             <p>Italian - Native</p>
-            <p>English - C1 (IELTS)</p>
-			
-			<h2 class="section-title">Skills</h2>
-<div class="skills">
-    <div class="skill">
-		<div class="skill-level">
-        <p>Graphic Design</p>
-            <span class="dot filled"></span>
-            <span class="dot filled"></span>
-            <span class="dot filled"></span>
-            <span class="dot filled"></span>
-            <span class="dot filled"></span>
         </div>
-    </div>
-    <div class="skill">
-        <div class="skill-level">
-        <p>Project Management</p>
-            <span class="dot filled"></span>
-            <span class="dot filled"></span>
-            <span class="dot filled"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-    <div class="skill">
-        <div class="skill-level">
-			<p>Architectural Design</p>
-            <span class="dot filled"></span>
-            <span class="dot filled"></span>
-            <span class="dot filled"></span>
-            <span class="dot filled"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-</div>
-
-        </div>
-		
 
         <div class="right">
-            <h2>EDUCATION</h2>
+            <h2 class="section-title">Education</h2>
+            <p class="date">2022 - Present</p>
+            <p><strong>University Name</strong> - Master in Architecture</p>
+            <p class="date">2019 - 2022</p>
+            <p><strong>University Name</strong> - Bachelor's Degree in Architecture</p>
+            <p class="date">2018</p>
+            <p><strong>University Name</strong> - Master in Museography</p>
 
-            <p><span class="date">2022 - Present</span><span class="date">Master's Degree in Architecture - Built Environment - Interiors</span> Politecnico di Milano</p>
+            <h2 class="section-title">Work Experience</h2>
+            <p class="date">2023 - Present</p>
+            <p><strong>Job Title</strong> - Company Name</p>
+            <p>Responsibilities and achievements...</p>
 
-            <p><span class="date">2023 - 2024</span><span class="date">First Level Master's Degree in Museography, Architecture and Archaeology, Strategic Planning and Innovative Management of Archaeological Sites</span> Accademia Adrianea, Roma</p>
-
-            <p><span class="date">2019 - 2022</span><span class="date">Bachelor's Degree in Architectural Design</span> Politecnico di Milano</p>
-
-            <p><span class="date">2014 - 2019</span><span class="date">Scientific High School - Applied Sciences</span> Istituto Salesiano don Bosco, Treviglio</p>
-
-            <h2 class="work-experience">WORK EXPERIENCE</h2>
-    
-            <p><span class="date">2017 - 2024&nbsp;</span><span class="date">Graphic Designer and Social Media Manager</span> Istituto Salesiano don Bosco, Treviglio (BG)</p>
-			
-			<p><span class="date">2023</span><span class="date">Substitute teacher</span> Istituto Comprensivo Q. Di Vona, Cassano d'Adda (MI)</p>
-
-            <p><span class="date">2021 - 2022</span><span class="date">Architectural Intern</span> Libonia Srl, Cassano d’Adda (MI)</p>
-			
-			<p><span class="date">2018</span><span class="date">Architectural Intern</span> Impregil SA, Lugano, Switzerland</p>
-			
-	<h2 class="work-experience">WORK EXPERIENCE</h2>
-    
-            <p><span class="date">2017 - 2024&nbsp;</span><span class="date">Graphic Designer and Social Media Manager</span> Istituto Salesiano don Bosco, Treviglio</p>
-			
-			<p><span class="date">2023</span><span class="date">Substitute teacher</span> Istituto Comprensivo Q. Di Vona, Cassano d'Adda (MI)</p>
-
-            <p><span class="date">2021 - 2022</span><span class="date">Architectural Intern</span> Libonia Srl, Cassano d’Adda (MI)</p>
-			
-			<p><span class="date">2018</span><span class="date">Architectural Intern</span> Impregil SA, Lugano, Switzerland</p>
-			
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-columns">
+                <div class="skills-column">
+                    <div class="skill">
+                        <p>Skill 1</p>
+                        <div class="skill-level">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Skill 2</p>
+                        <div class="skill-level">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more skills columns as needed -->
+            </div>
         </div>
     </div>
 
-     <div class="footer-container">
-        <footer>
+    <footer>
+        <div class="footer-container">
             <p>&copy; 2024 Chiara Brambilla. All rights reserved.</p>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
+    <script>
+        document.getElementById('themeButton').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
 </body>
 </html>
